@@ -39,10 +39,19 @@
         "logo_width": 260,
         "menu": "main-menu"
       }
+    },
+    "hb_announcement_bar_yaHxca": {
+      "type": "hb-announcement-bar",
+      "name": "HB Announcement Bar",
+      "settings": {
+        "text": "Make life feel like a Sunday",
+        "link": ""
+      }
     }
   },
   "order": [
     "header",
+    "hb_announcement_bar_yaHxca",
     "hb_sunday_header_dcUBjk"
   ]
 }
