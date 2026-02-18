@@ -11,13 +11,6 @@
   "name": "t:sections.header.name",
   "type": "header",
   "sections": {
-    "hb_announcement_bar_q8wKpn": {
-      "type": "hb-announcement-bar",
-      "name": "HB Announcement Bar",
-      "settings": {
-        "text": "Make life feel like a Sunday"
-      }
-    },
     "header": {
       "type": "header",
       "disabled": true,
@@ -49,7 +42,6 @@
     }
   },
   "order": [
-    "hb_announcement_bar_q8wKpn",
     "header",
     "hb_sunday_header_dcUBjk"
   ]
