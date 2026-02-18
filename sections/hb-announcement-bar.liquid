@@ -1,0 +1,42 @@
+{{ 'hb-announcement-bar.css' | asset_url | stylesheet_tag }}
+
+<section class="hb-announcement-bar" role="region" aria-label="Announcement">
+  <div class="hb-announcement-bar__inner">
+    {%- if section.settings.link != blank -%}
+      <a href="{{ section.settings.link }}" class="hb-announcement-bar__text">
+        {{ section.settings.text | escape }}
+      </a>
+    {%- else -%}
+      <p class="hb-announcement-bar__text">{{ section.settings.text | escape }}</p>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "HB Announcement Bar",
+  "tag": "section",
+  "class": "announcement-bar-section",
+  "enabled_on": {
+    "groups": ["header"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Announcement text",
+      "default": "Make life feel like a Sunday"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "HB Announcement Bar"
+    }
+  ]
+}
+{% endschema %}
