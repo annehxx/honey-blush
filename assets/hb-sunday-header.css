@@ -1,0 +1,145 @@
+.hb-sunday-header {
+  background: #ece1aa;
+  border-bottom: 0;
+}
+
+.hb-sunday-header__inner {
+  max-width: 1320px;
+  min-height: 142px;
+  margin: 0 auto;
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.hb-sunday-header__logo-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  flex: 0 0 auto;
+}
+
+.hb-sunday-header__logo {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.hb-sunday-header__logo-text {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 3rem;
+  line-height: 1;
+  color: #75481d;
+  font-weight: 700;
+}
+
+.hb-sunday-header__nav {
+  flex: 1 1 auto;
+}
+
+.hb-sunday-header__menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+
+.hb-sunday-header__menu-link {
+  color: #6f431c;
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: opacity 0.2s ease;
+}
+
+.hb-sunday-header__menu-link:hover {
+  opacity: 0.75;
+}
+
+.hb-sunday-header__menu-link.is-active {
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
+.hb-sunday-header__caret {
+  width: 10px;
+  height: 10px;
+  display: inline-flex;
+}
+
+.hb-sunday-header__caret svg {
+  width: 100%;
+  height: 100%;
+}
+
+.hb-sunday-header__icons {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.hb-sunday-header__icon-link {
+  color: #6f431c;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  transition: opacity 0.2s ease;
+}
+
+.hb-sunday-header__icon-link:hover {
+  opacity: 0.75;
+}
+
+.hb-sunday-header__icon {
+  display: inline-flex;
+  width: 20px;
+  height: 20px;
+}
+
+.hb-sunday-header__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 989px) {
+  .hb-sunday-header__inner {
+    min-height: 0;
+    padding: 18px 20px;
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+
+  .hb-sunday-header__nav {
+    order: 3;
+    flex-basis: 100%;
+  }
+
+  .hb-sunday-header__menu {
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 2px;
+    scrollbar-width: thin;
+  }
+
+  .hb-sunday-header__menu-link {
+    font-size: 1.6rem;
+    white-space: nowrap;
+  }
+
+  .hb-sunday-header__icons {
+    gap: 16px;
+  }
+}

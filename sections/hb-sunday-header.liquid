@@ -1,0 +1,124 @@
+{{ 'hb-sunday-header.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign header_menu = section.settings.menu
+  assign logo_image = section.settings.logo
+-%}
+
+<header class="hb-sunday-header" role="banner">
+  <div class="hb-sunday-header__inner">
+    <a href="{{ routes.root_url }}" class="hb-sunday-header__logo-link" aria-label="{{ shop.name | escape }}">
+      {%- if logo_image != blank -%}
+        {%- assign logo_alt = logo_image.alt | default: shop.name | escape -%}
+        {%- assign logo_height = section.settings.logo_width | divided_by: logo_image.aspect_ratio -%}
+        {{
+          logo_image
+          | image_url: width: 320
+          | image_tag:
+            class: 'hb-sunday-header__logo',
+            widths: '120,160,200,240,320',
+            width: section.settings.logo_width,
+            height: logo_height,
+            alt: logo_alt,
+            preload: true
+        }}
+      {%- else -%}
+        <span class="hb-sunday-header__logo-text">{{ section.settings.logo_text | escape }}</span>
+      {%- endif -%}
+    </a>
+
+    <nav class="hb-sunday-header__nav" aria-label="Primary">
+      <ul class="hb-sunday-header__menu">
+        {%- for link in linklists[header_menu].links -%}
+          <li class="hb-sunday-header__menu-item">
+            <a
+              href="{{ link.url }}"
+              class="hb-sunday-header__menu-link{% if link.current %} is-active{% endif %}"
+              {% if link.current %}
+                aria-current="page"
+              {% endif %}
+            >
+              {{ link.title | escape }}
+              {%- if link.links != blank -%}
+                <span class="hb-sunday-header__caret" aria-hidden="true">
+                  {{ 'icon-caret.svg' | inline_asset_content }}
+                </span>
+              {%- endif -%}
+            </a>
+          </li>
+        {%- endfor -%}
+      </ul>
+    </nav>
+
+    <div class="hb-sunday-header__icons">
+      <a href="{{ routes.search_url }}" class="hb-sunday-header__icon-link" aria-label="{{ 'general.search.search' | t }}">
+        <span class="hb-sunday-header__icon">{{ 'icon-search.svg' | inline_asset_content }}</span>
+      </a>
+
+      {%- if shop.customer_accounts_enabled -%}
+        <a
+          href="{% if customer %}{{ routes.account_url }}{% else %}{{ routes.account_login_url }}{% endif %}"
+          class="hb-sunday-header__icon-link"
+          aria-label="{% if customer %}{{ 'customer.account_fallback' | t }}{% else %}{{ 'customer.log_in' | t }}{% endif %}"
+        >
+          <span class="hb-sunday-header__icon">{{ 'icon-account.svg' | inline_asset_content }}</span>
+        </a>
+      {%- endif -%}
+
+      <a href="{{ routes.cart_url }}" class="hb-sunday-header__icon-link" aria-label="{{ 'templates.cart.cart' | t }}">
+        <span class="hb-sunday-header__icon">
+          {% if cart == empty %}
+            {{ 'icon-cart-empty.svg' | inline_asset_content }}
+          {% else %}
+            {{ 'icon-cart.svg' | inline_asset_content }}
+          {% endif %}
+        </span>
+      </a>
+    </div>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "HB Sunday Header",
+  "tag": "section",
+  "class": "section-header",
+  "enabled_on": {
+    "groups": ["header"]
+  },
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo image"
+    },
+    {
+      "type": "text",
+      "id": "logo_text",
+      "label": "Logo text",
+      "default": "Sunday Butter"
+    },
+    {
+      "type": "range",
+      "id": "logo_width",
+      "min": 80,
+      "max": 260,
+      "step": 5,
+      "unit": "px",
+      "label": "Logo width",
+      "default": 130
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu",
+      "default": "main-menu"
+    }
+  ],
+  "presets": [
+    {
+      "name": "HB Sunday Header"
+    }
+  ]
+}
+{% endschema %}
