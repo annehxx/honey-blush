@@ -1,0 +1,75 @@
+{{ 'hb-sunday-hero.css' | asset_url | stylesheet_tag }}
+
+<section class="hb-sunday-hero">
+  <div class="hb-sunday-hero__media">
+    {%- if section.settings.background_image != blank -%}
+      {{
+        section.settings.background_image
+        | image_url: width: 2800
+        | image_tag:
+          class: 'hb-sunday-hero__image',
+          widths: '750,1100,1500,1780,2000,2400,2800',
+          loading: 'lazy',
+          alt: section.settings.background_image.alt | escape
+      }}
+    {%- else -%}
+      {{ 'lifestyle-2' | placeholder_svg_tag: 'hb-sunday-hero__image hb-sunday-hero__placeholder' }}
+    {%- endif -%}
+  </div>
+
+  <div class="hb-sunday-hero__overlay">
+    <div class="hb-sunday-hero__card">
+      <h2 class="hb-sunday-hero__title">{{ section.settings.heading | escape }}</h2>
+      <p class="hb-sunday-hero__text">{{ section.settings.copy | escape }}</p>
+
+      {%- if section.settings.button_label != blank -%}
+        <a href="{{ section.settings.button_link | default: '#' }}" class="hb-sunday-hero__button">
+          {{ section.settings.button_label | escape }}
+        </a>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "HB Sunday Hero",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background image"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "The Sunday Uniform"
+    },
+    {
+      "type": "textarea",
+      "id": "copy",
+      "label": "Description",
+      "default": "Premium essentials for slow mornings, breakfast in bed, and the sweet life."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Shop The Essentials"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "HB Sunday Hero"
+    }
+  ]
+}
+{% endschema %}
