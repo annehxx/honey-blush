@@ -37,9 +37,20 @@
         "padding_top": 44,
         "padding_bottom": 36
       }
+    },
+    "hb_sunday_hero_MX3fqN": {
+      "type": "hb-sunday-hero",
+      "name": "HB Sunday Hero",
+      "settings": {
+        "heading": "The Sunday Uniform",
+        "copy": "Premium essentials for slow mornings, breakfast in bed, and the sweet life.",
+        "button_label": "Shop The Essentials",
+        "button_link": ""
+      }
     }
   },
   "order": [
-    "featured_collection"
+    "featured_collection",
+    "hb_sunday_hero_MX3fqN"
   ]
 }
