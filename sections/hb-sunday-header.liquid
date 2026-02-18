@@ -1,6 +1,7 @@
 {{ 'hb-sunday-header.css' | asset_url | stylesheet_tag }}
 
 {%- liquid
+  assign header_menu = section.settings.menu
   assign logo_image = section.settings.logo
 -%}
 
@@ -28,7 +29,7 @@
 
     <nav class="hb-sunday-header__nav" aria-label="Primary">
       <ul class="hb-sunday-header__menu">
-        {%- for link in section.settings.menu.links -%}
+        {%- for link in linklists[header_menu].links -%}
           <li class="hb-sunday-header__menu-item">
             <a
               href="{{ link.url }}"
@@ -54,13 +55,15 @@
         <span class="hb-sunday-header__icon">{{ 'icon-search.svg' | inline_asset_content }}</span>
       </a>
 
-      <a
-        href="{% if customer %}{{ routes.account_url }}{% else %}{{ routes.account_login_url }}{% endif %}"
-        class="hb-sunday-header__icon-link"
-        aria-label="{% if customer %}{{ 'customer.account_fallback' | t }}{% else %}{{ 'customer.log_in' | t }}{% endif %}"
-      >
-        <span class="hb-sunday-header__icon">{{ 'icon-account.svg' | inline_asset_content }}</span>
-      </a>
+      {%- if shop.customer_accounts_enabled -%}
+        <a
+          href="{% if customer %}{{ routes.account_url }}{% else %}{{ routes.account_login_url }}{% endif %}"
+          class="hb-sunday-header__icon-link"
+          aria-label="{% if customer %}{{ 'customer.account_fallback' | t }}{% else %}{{ 'customer.log_in' | t }}{% endif %}"
+        >
+          <span class="hb-sunday-header__icon">{{ 'icon-account.svg' | inline_asset_content }}</span>
+        </a>
+      {%- endif -%}
 
       <a href="{{ routes.cart_url }}" class="hb-sunday-header__icon-link" aria-label="{{ 'templates.cart.cart' | t }}">
         <span class="hb-sunday-header__icon">
