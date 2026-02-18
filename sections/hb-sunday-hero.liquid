@@ -9,7 +9,8 @@
         | image_tag:
           class: 'hb-sunday-hero__image',
           widths: '750,1100,1500,1780,2000,2400,2800',
-          loading: 'lazy',
+          loading: 'eager',
+          fetchpriority: 'high',
           alt: section.settings.background_image.alt | escape
       }}
     {%- else -%}

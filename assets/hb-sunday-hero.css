@@ -1,8 +1,18 @@
 .hb-sunday-hero {
+  --hb-cream: #f7f3ee;
+  --hb-porcelain: #fbf9f6;
+  --hb-espresso: #2a2422;
+  --hb-taupe: #8a7f78;
+  --hb-blush: #d8a7b1;
+  --hb-mauve: #b7a9c9;
+  --hb-honey: #e6c9a8;
+  --hb-ink: #1c1a19;
   position: relative;
   width: 100%;
-  min-height: 59rem;
+  min-height: 58rem;
   overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  background: var(--hb-cream);
 }
 
 .hb-sunday-hero__media {
@@ -25,37 +35,37 @@
 .hb-sunday-hero__overlay {
   position: relative;
   z-index: 2;
-  min-height: 59rem;
+  min-height: 58rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 32px;
+  padding: 36px;
 }
 
 .hb-sunday-hero__card {
-  width: min(100%, 54.5rem);
-  background: #f2f2f2;
-  border-radius: 6px;
-  padding: 52px 48px 42px;
+  width: min(100%, 56rem);
+  background: var(--hb-porcelain);
+  border-radius: 8px;
+  padding: 50px 48px 40px;
   text-align: center;
-  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.02);
+  box-shadow: 0 14px 36px rgba(28, 26, 25, 0.12);
 }
 
 .hb-sunday-hero__title {
   margin: 0;
-  color: #4e2308;
-  font-size: clamp(3.2rem, 2.8vw, 5.2rem);
+  color: var(--hb-espresso);
+  font-size: clamp(3.6rem, 4.2vw, 6.2rem);
   line-height: 1.08;
-  font-weight: 500;
-  letter-spacing: 0;
+  font-weight: 600;
+  letter-spacing: -0.02em;
 }
 
 .hb-sunday-hero__text {
-  margin: 24px auto 30px;
+  margin: 20px auto 32px;
   max-width: 42rem;
-  color: #7b4b2a;
-  font-size: clamp(1.8rem, 1.25vw, 2.8rem);
-  line-height: 1.55;
+  color: var(--hb-taupe);
+  font-size: clamp(1.6rem, 1.2vw, 2rem);
+  line-height: 1.7;
   font-weight: 400;
 }
 
@@ -63,30 +73,33 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 210px;
-  min-height: 54px;
+  min-width: 228px;
+  min-height: 56px;
   border-radius: 999px;
-  padding: 0 32px;
+  padding: 0 30px;
   text-decoration: none;
-  background: #6e3412;
-  color: #f3d167;
-  font-size: 2.8rem;
+  background: var(--hb-ink);
+  color: var(--hb-cream);
+  font-size: 1.45rem;
   line-height: 1;
-  font-weight: 600;
-  transition: opacity 0.2s ease;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .hb-sunday-hero__button:hover {
-  opacity: 0.88;
+  background: var(--hb-blush);
+  color: var(--hb-ink);
 }
 
 @media screen and (max-width: 989px) {
   .hb-sunday-hero {
-    min-height: 48rem;
+    min-height: 46rem;
   }
 
   .hb-sunday-hero__overlay {
-    min-height: 48rem;
+    min-height: 46rem;
     padding: 20px;
   }
 
@@ -96,14 +109,14 @@
   }
 
   .hb-sunday-hero__text {
-    margin: 18px auto 24px;
+    margin: 16px auto 24px;
     max-width: 30rem;
   }
 
   .hb-sunday-hero__button {
     min-width: 180px;
     min-height: 48px;
-    font-size: 2.2rem;
-    padding: 0 24px;
+    font-size: 1.25rem;
+    padding: 0 20px;
   }
 }
