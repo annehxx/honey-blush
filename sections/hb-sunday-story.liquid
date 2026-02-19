@@ -1,0 +1,90 @@
+{{ 'hb-sunday-story.css' | asset_url | stylesheet_tag }}
+
+<section class="hb-sunday-story">
+  <div class="hb-sunday-story__container page-width">
+    <div class="hb-sunday-story__content">
+      {%- if section.settings.heading != blank -%}
+        <h2 class="hb-sunday-story__heading">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+
+      {%- if section.settings.paragraph_one != blank -%}
+        <div class="hb-sunday-story__text rte">{{ section.settings.paragraph_one }}</div>
+      {%- endif -%}
+
+      {%- if section.settings.paragraph_two != blank -%}
+        <div class="hb-sunday-story__text rte">{{ section.settings.paragraph_two }}</div>
+      {%- endif -%}
+
+      {%- if section.settings.button_label != blank -%}
+        <a href="{{ section.settings.button_link | default: '#' }}" class="hb-sunday-story__button">
+          {{ section.settings.button_label | escape }}
+        </a>
+      {%- endif -%}
+    </div>
+
+    <div class="hb-sunday-story__media">
+      {%- if section.settings.image != blank -%}
+        {{
+          section.settings.image
+          | image_url: width: 1200
+          | image_tag:
+            class: 'hb-sunday-story__image',
+            widths: '480,720,960,1200',
+            loading: 'lazy',
+            alt: section.settings.image.alt | escape
+        }}
+      {%- else -%}
+        {{ 'image' | placeholder_svg_tag: 'hb-sunday-story__image hb-sunday-story__placeholder' }}
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "HB Sunday Story",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Love is a Slow Morning"
+    },
+    {
+      "type": "richtext",
+      "id": "paragraph_one",
+      "label": "Paragraph 1",
+      "default": "<p>At <strong>Sunday Butter</strong>, we believe the best things in life are served warm. Whether it's waffles in bed, sharing a croissant with your best friend, or curling up in the perfect oversized fit, we make premium essentials for the moments you wish would last forever.</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "paragraph_two",
+      "label": "Paragraph 2",
+      "default": "<p>From our <strong>signature \"Butter\" basics</strong> to our limited-edition <strong>Love Collection</strong>, this is your uniform for the sweet life.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Read Our Story"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "HB Sunday Story"
+    }
+  ]
+}
+{% endschema %}
