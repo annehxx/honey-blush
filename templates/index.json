@@ -48,22 +48,10 @@
         "button_label": "Shop The Essentials",
         "button_link": ""
       }
-    },
-    "hb_xoxo_edit_EagGXX": {
-      "type": "hb-xoxo-edit",
-      "name": "HB XOXO Edit",
-      "settings": {
-        "heading": "Shop the XOXO Edit",
-        "subheading": "Cherry-picked favourites for the one you love berry much.",
-        "collection": "",
-        "products_to_show": 5,
-        "button_label": "Choose options"
-      }
     }
   },
   "order": [
     "featured_collection",
-    "hb_sunday_hero_MX3fqN",
-    "hb_xoxo_edit_EagGXX"
+    "hb_sunday_hero_MX3fqN"
   ]
 }
