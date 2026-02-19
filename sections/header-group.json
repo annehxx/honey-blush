@@ -11,35 +11,6 @@
   "name": "t:sections.header.name",
   "type": "header",
   "sections": {
-    "header": {
-      "type": "header",
-      "disabled": true,
-      "settings": {
-        "logo_position": "middle-left",
-        "mobile_logo_position": "center",
-        "menu": "main-menu",
-        "menu_type_desktop": "dropdown",
-        "sticky_header_type": "on-scroll-up",
-        "show_line_separator": true,
-        "color_scheme": "scheme-1",
-        "menu_color_scheme": "scheme-1",
-        "enable_country_selector": true,
-        "enable_language_selector": true,
-        "enable_customer_avatar": true,
-        "margin_bottom": 0,
-        "padding_top": 20,
-        "padding_bottom": 20
-      }
-    },
-    "hb_sunday_header_dcUBjk": {
-      "type": "hb-sunday-header",
-      "name": "HB Sunday Header",
-      "settings": {
-        "logo_text": "honey&blush",
-        "logo_width": 260,
-        "menu": "main-menu"
-      }
-    },
     "hb_announcement_bar_yaHxca": {
       "type": "hb-announcement-bar",
       "name": "HB Announcement Bar",
@@ -47,11 +18,29 @@
         "text": "Make life feel like a Sunday",
         "link": ""
       }
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "logo_position": "middle-left",
+        "mobile_logo_position": "center",
+        "menu": "main-menu",
+        "menu_type_desktop": "dropdown",
+        "sticky_header_type": "on-scroll-up",
+        "show_line_separator": true,
+        "color_scheme": "scheme-3",
+        "menu_color_scheme": "scheme-3",
+        "enable_country_selector": true,
+        "enable_language_selector": true,
+        "enable_customer_avatar": true,
+        "margin_bottom": 0,
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
     }
   },
   "order": [
-    "header",
     "hb_announcement_bar_yaHxca",
-    "hb_sunday_header_dcUBjk"
+    "header"
   ]
 }
