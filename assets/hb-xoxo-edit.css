@@ -1,0 +1,145 @@
+.hb-xoxo-edit {
+  background: #f3f3f3;
+  padding: 64px 0 72px;
+}
+
+.hb-xoxo-edit__container {
+  max-width: 1360px;
+}
+
+.hb-xoxo-edit__heading {
+  margin: 0;
+  color: #4b2313;
+  font-size: clamp(3.4rem, 4.2vw, 5.4rem);
+  line-height: 1.06;
+  letter-spacing: -0.02em;
+  font-weight: 500;
+}
+
+.hb-xoxo-edit__subheading {
+  margin: 14px 0 30px;
+  color: #7f5f51;
+  font-size: clamp(1.8rem, 1.6vw, 3rem);
+  line-height: 1.35;
+  font-weight: 400;
+}
+
+.hb-xoxo-edit__subheading strong {
+  font-weight: 600;
+}
+
+.hb-xoxo-edit__grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.hb-xoxo-edit__card {
+  background: #ebebeb;
+  border-radius: 6px;
+  padding: 16px 16px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.hb-xoxo-edit__media-link {
+  display: block;
+  text-decoration: none;
+}
+
+.hb-xoxo-edit__image {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: contain;
+  display: block;
+}
+
+.hb-xoxo-edit__image-placeholder {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  display: grid;
+  place-items: center;
+  color: #7f5f51;
+  background: #f5f5f5;
+  font-size: 1.4rem;
+}
+
+.hb-xoxo-edit__title {
+  margin: 14px 0 8px;
+  color: #4b2313;
+  font-size: 2rem;
+  line-height: 1.2;
+  font-weight: 400;
+  min-height: 4.8rem;
+}
+
+.hb-xoxo-edit__title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.hb-xoxo-edit__price {
+  margin-bottom: 14px;
+  color: #4b2313;
+  font-size: 3rem;
+  line-height: 1.15;
+}
+
+.hb-xoxo-edit__button {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 10px 28px;
+  border: 1px solid #1f1f1f;
+  border-radius: 999px;
+  color: #1f1f1f;
+  text-decoration: none;
+  font-size: 1.6rem;
+  line-height: 1.1;
+  background: transparent;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.hb-xoxo-edit__button:hover {
+  background: #1f1f1f;
+  color: #ffffff;
+}
+
+@media screen and (max-width: 1199px) {
+  .hb-xoxo-edit__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .hb-xoxo-edit {
+    padding: 40px 0 48px;
+  }
+
+  .hb-xoxo-edit__subheading {
+    margin-bottom: 20px;
+  }
+
+  .hb-xoxo-edit__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hb-xoxo-edit__title {
+    font-size: 1.7rem;
+    min-height: 4rem;
+  }
+
+  .hb-xoxo-edit__price {
+    font-size: 2.2rem;
+  }
+
+  .hb-xoxo-edit__button {
+    font-size: 1.4rem;
+    min-height: 44px;
+    padding: 8px 20px;
+  }
+}

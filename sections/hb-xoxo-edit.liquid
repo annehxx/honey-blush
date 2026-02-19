@@ -1,0 +1,106 @@
+{{ 'hb-xoxo-edit.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign selected_collection = section.settings.collection
+  assign products_limit = section.settings.products_to_show
+-%}
+
+<section class="hb-xoxo-edit">
+  <div class="hb-xoxo-edit__container page-width">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="hb-xoxo-edit__heading">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+
+    {%- if section.settings.subheading != blank -%}
+      <p class="hb-xoxo-edit__subheading">{{ section.settings.subheading }}</p>
+    {%- endif -%}
+
+    <div class="hb-xoxo-edit__grid" role="list">
+      {%- if selected_collection != blank and selected_collection.products_count > 0 -%}
+        {%- for product in selected_collection.products limit: products_limit -%}
+          <article class="hb-xoxo-edit__card" role="listitem">
+            <a href="{{ product.url }}" class="hb-xoxo-edit__media-link" aria-label="{{ product.title | escape }}">
+              {%- if product.featured_image != blank -%}
+                {{
+                  product.featured_image
+                  | image_url: width: 720
+                  | image_tag:
+                    class: 'hb-xoxo-edit__image',
+                    widths: '240,360,540,720',
+                    loading: 'lazy',
+                    alt: product.featured_image.alt | default: product.title | escape
+                }}
+              {%- else -%}
+                <div class="hb-xoxo-edit__image-placeholder">No image</div>
+              {%- endif -%}
+            </a>
+
+            <h3 class="hb-xoxo-edit__title">
+              <a href="{{ product.url }}">{{ product.title }}</a>
+            </h3>
+
+            <div class="hb-xoxo-edit__price">{{ product.price | money_with_currency }}</div>
+
+            <a href="{{ product.url }}" class="hb-xoxo-edit__button">{{ section.settings.button_label }}</a>
+          </article>
+        {%- endfor -%}
+      {%- else -%}
+        {%- for i in (1..products_limit) -%}
+          <article class="hb-xoxo-edit__card" role="listitem">
+            <div class="hb-xoxo-edit__image-placeholder">Product image</div>
+            <h3 class="hb-xoxo-edit__title">Sample product {{ i }}</h3>
+            <div class="hb-xoxo-edit__price">{{ 3995 | money_with_currency }}</div>
+            <span class="hb-xoxo-edit__button">{{ section.settings.button_label }}</span>
+          </article>
+        {%- endfor -%}
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "HB XOXO Edit",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Shop the XOXO Edit"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Cherry-picked favourites for the one you love berry much."
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "label": "Products to show",
+      "min": 3,
+      "max": 10,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Choose options"
+    }
+  ],
+  "presets": [
+    {
+      "name": "HB XOXO Edit"
+    }
+  ]
+}
+{% endschema %}
