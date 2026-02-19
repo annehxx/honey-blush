@@ -7,7 +7,7 @@
   --hb-mauve: #b7a9c9;
   --hb-honey: #e6c9a8;
   --hb-ink: #1c1a19;
-  --hb-header-light: #fff7fa;
+  --hb-header-light: #2a2422;
   background: var(--hb-blush);
   border-bottom: 0;
   font-family: 'Poppins', sans-serif;
@@ -73,12 +73,12 @@
 }
 
 .hb-sunday-header__menu-link:hover {
-  color: #ffffff;
+  color: var(--hb-ink);
   opacity: 1;
 }
 
 .hb-sunday-header__menu-link.is-active {
-  color: #ffffff;
+  color: var(--hb-ink);
   text-decoration: underline;
   text-underline-offset: 0.3em;
   text-decoration-thickness: 1.5px;
@@ -114,7 +114,7 @@
 }
 
 .hb-sunday-header__icon-link:hover {
-  color: #ffffff;
+  color: var(--hb-ink);
   opacity: 1;
 }
 
