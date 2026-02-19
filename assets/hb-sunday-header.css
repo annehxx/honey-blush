@@ -72,6 +72,24 @@
   transition: color 0.2s ease, opacity 0.2s ease;
 }
 
+.hb-sunday-header__menu-link > svg,
+.hb-sunday-header__menu-link > img,
+.hb-sunday-header__menu-link .icon {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 16px;
+  display: inline-block;
+  vertical-align: middle;
+  object-fit: contain;
+}
+
+.hb-sunday-header__menu-link i {
+  font-size: 16px;
+  line-height: 1;
+  display: inline-block;
+  vertical-align: middle;
+}
+
 .hb-sunday-header__menu-link:hover {
   color: var(--hb-ink);
   opacity: 1;
@@ -122,6 +140,18 @@
   display: inline-flex;
   width: 20px;
   height: 20px;
+}
+
+.hb-sunday-header__icon-link > svg,
+.hb-sunday-header__icon-link > img,
+.hb-sunday-header__icon-link > i {
+  width: 20px;
+  height: 20px;
+  max-width: 20px;
+  max-height: 20px;
+  display: inline-block;
+  object-fit: contain;
+  line-height: 1;
 }
 
 .hb-sunday-header__icon svg {
