@@ -42,11 +42,22 @@
       "type": "hb-sunday-hero",
       "name": "HB Sunday Hero",
       "settings": {
-        "background_image": "shopify://shop_images/ChatGPT_Image_19._Feb._2026_11_41_46.png",
-        "heading": "The Sunday Uniform",
-        "copy": "Premium essentials for slow mornings, breakfast in bed, and the sweet life.",
-        "button_label": "Shop The Essentials",
+        "background_image": "shopify://shop_images/ChatGPT_Image_5._Marz_2026_20_37_55.png",
+        "heading": "Warning: Outfit May Cause Attention",
+        "copy": "Soft cotton. Cute graphics. Perfect fit.",
+        "button_label": "Shop Now",
         "button_link": ""
+      }
+    },
+    "hb_xoxo_edit_DciwXE": {
+      "type": "hb-xoxo-edit",
+      "name": "HB XOXO Edit",
+      "settings": {
+        "heading": "Shop our Favourites",
+        "subheading": "Cherry-picked favourites for the chronically online.",
+        "collection": "",
+        "products_to_show": 5,
+        "button_label": "Choose options"
       }
     },
     "hb_sunday_story_BERfzj": {
@@ -58,17 +69,6 @@
         "paragraph_two": "<p>From our <strong>signature \"Butter\" basics</strong> to our limited-edition <strong>Love Collection</strong>, this is your uniform for the sweet life.</p>",
         "button_label": "Read Our Story",
         "button_link": ""
-      }
-    },
-    "hb_xoxo_edit_DciwXE": {
-      "type": "hb-xoxo-edit",
-      "name": "HB XOXO Edit",
-      "settings": {
-        "heading": "Shop the XOXO Edit",
-        "subheading": "Cherry-picked favourites for the one you love berry much.",
-        "collection": "",
-        "products_to_show": 5,
-        "button_label": "Choose options"
       }
     }
   },
