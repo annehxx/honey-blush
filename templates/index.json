@@ -49,7 +49,18 @@
         "button_link": ""
       }
     },
-    "hb_xoxo_edit_EagGXX": {
+    "hb_sunday_story_BERfzj": {
+      "type": "hb-sunday-story",
+      "name": "HB Sunday Story",
+      "settings": {
+        "heading": "Love is a Slow Morning",
+        "paragraph_one": "<p>At <strong>Sunday Butter</strong>, we believe the best things in life are served warm. Whether it's waffles in bed, sharing a croissant with your best friend, or curling up in the perfect oversized fit, we make premium essentials for the moments you wish would last forever.</p>",
+        "paragraph_two": "<p>From our <strong>signature \"Butter\" basics</strong> to our limited-edition <strong>Love Collection</strong>, this is your uniform for the sweet life.</p>",
+        "button_label": "Read Our Story",
+        "button_link": ""
+      }
+    },
+    "hb_xoxo_edit_DciwXE": {
       "type": "hb-xoxo-edit",
       "name": "HB XOXO Edit",
       "settings": {
@@ -64,6 +75,7 @@
   "order": [
     "featured_collection",
     "hb_sunday_hero_MX3fqN",
-    "hb_xoxo_edit_EagGXX"
+    "hb_xoxo_edit_DciwXE",
+    "hb_sunday_story_BERfzj"
   ]
 }
